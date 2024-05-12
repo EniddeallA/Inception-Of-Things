@@ -1,7 +1,7 @@
 #Vagrant configuration version 2
 Vagrant.configure("2") do |config|
-  #set the box for the guest machine to alpine
-  config.vm.box = "generic/alpine312"
+  #set the box for the guest machine to debian buster
+  config.vm.box = "debian/buster64"
   
   #Create the server machine
   config.vm.define "akhalidS" do |server|

@@ -1,1 +1,1 @@
-{"name":"generic/alpine312","version":"4.3.12","provider":"virtualbox","directory":"boxes/generic-VAGRANTSLASH-alpine312/4.3.12/amd64/virtualbox"}
+{"name":"debian/buster64","version":"10.20231211.1","provider":"virtualbox","directory":"boxes/debian-VAGRANTSLASH-buster64/10.20231211.1/virtualbox"}
