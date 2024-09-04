@@ -1,17 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bonus
+  name: appx-gitlab
   namespace: argocd
 spec:
   destination:
     namespace: dev
     server: https://kubernetes.default.svc
-  project: default
   source:
-    repoURL: http://root:@:5555/root/mkaddani-ops-demo.git
     path: manifests_will42/
+    repoURL: http://gitlab-webservice-default.gitlab.svc:8181/root/mkaddani-ops-demo.git
     targetRevision: main
+  sources: []
+  project: default
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
+

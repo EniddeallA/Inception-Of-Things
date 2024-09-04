@@ -37,6 +37,3 @@ sudo usermod -aG docker $USER;
 newgrp docker;
 ## restart machine to apply new priviliges
 sudo shutdown -r now
-
-#Install Helm
-curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash

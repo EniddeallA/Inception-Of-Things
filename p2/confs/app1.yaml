@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1-deployment
+  labels:
+    app: app1
+spec:
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: paulbouwer/hello-kubernetes:1.10
+        env:
+        - name: MESSAGE
+          value: "Hello from APP1." # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
+        ports:
+        - containerPort: 8080 # containerPort: The port that each container inside a pod listens to for traffic.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1-service
+spec:
+  type: ClusterIP
+  selector:
+    app: app1
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8080
+---

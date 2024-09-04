@@ -11,8 +11,9 @@ global:
     configureCertmanager: false
     class: "nginx"
   hosts:
-    domain: 192.168.99.100.nip.io
-    externalIP: 192.168.99.100
+
+    domain: local.com
+    externalIP: 0.0.0.0
   # Disable Rails bootsnap cache (temporary)
   rails:
     bootsnap:
@@ -52,3 +53,4 @@ registry:
   hpa:
     minReplicas: 1
     maxReplicas: 1
+
